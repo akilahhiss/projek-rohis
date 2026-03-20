@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #d3efda 0%, #f2d8b5 100%);
+}
+
+/* ========================= */
+/* HERO SECTION */
+/* ========================= */
+.hero-section {
+  position: relative;
+  height: 70vh;
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("../foto/header.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px;
+}
+
+/* WARNA TULISAN BARU (cerah & kebaca) */
+.hero-section .logo {
+  width: 140px;
+  height: auto;
+  margin-bottom: 4px;
+}
+
+.hero-section .sub-title {
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 1;
+  margin-bottom: 2px;
+  color: #D8FCEB;  /* terang */
+}
+
+.hero-section .main-title {
+  font-family: 'Irish Grover', cursive;
+  font-size: 54px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  color: #E8FFF4; /* terang */
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+.hero-section .description {
+  font-size: 16px;
+  max-width: 500px;
+  line-height: 1.4;
+  opacity: 1;
+  margin-top: 0;
+  color: #F5FFF9; /* putih lembut */
+}
+
+/* ANIMASI */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-section .logo,
+.hero-section .sub-title,
+.hero-section .main-title,
+.hero-section .description {
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-section .logo { animation-delay: 0.2s; }
+.hero-section .sub-title { animation-delay: 0.4s; }
+.hero-section .main-title { animation-delay: 0.6s; }
+.hero-section .description { animation-delay: 0.8s; }
+
+/* ========================= */
+/* NAVIGATION */
+/* ========================= */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #54736c;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+}
+
+nav ul .center {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #d4f5d0;
+}
+
+/* ========================= */
+/* CONTENT BOX */
+/* ========================= */
+.content-box {
+  max-width: 1300px;
+  background-color: #ffffff;
+  margin: 15px auto;
+  padding: 35px 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  color: #0f3d2e;
+
+  border-left: 4px solid #699f84;
+  border-right: 4px solid #699f84;
+  border-bottom: 2px solid #a5c9b4;
+}
+/* HAMBURGER BUTTON */
+.menu-btn {
+  font-size: 25px;
+  cursor: pointer;
+  color: #0f3d2e;
+  padding: 10px 15px;
+  transition: 0.3s ease;
+}
+
+.menu-btn:hover {
+  opacity: 0.7;
+}
+
+/* SIDEBAR — BACKGROUND HIJAU */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: -310px;
+  width: 300px;
+  height: 100%;
+  padding: 30px 25px;
+  background: linear-gradient(180deg, #cfe9dd, #e8f5ef); /* HIJAU LEMBUT */
+  backdrop-filter: blur(4px);
+  transition: left 0.45s cubic-bezier(.25,.8,.25,1), opacity 0.4s ease;
+  opacity: 0;
+  z-index: 2000;
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.18);
+  border-right: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+#sidebar.active {
+  left: 0;
+  opacity: 1;
+}
+
+/* ANIMASI MASUK UNTUK ISI */
+#sidebar.active .profile-info,
+#sidebar.active h2,
+#sidebar.active .logout-btn {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* JUDUL */
+#sidebar h2 {
+  font-size: 22px;
+  color: #0d3426;
+  margin-bottom: 20px;
+  font-weight: 700;
+  opacity: 0;
+}
+
+/* KARTU PROFIL — HIJAU PUTIH */
+.profile-info {
+  background: #f8fffc; /* PUTIH KEHIJAUAN */
+  padding: 18px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 1px solid #c3dcd1; /* BORDER HIJAU LEMBUT */
+  opacity: 0;
+}
+
+#sidebar p {
+  margin: 10px 0;
+  font-size: 15px;
+  color: #0f3d2e;
+}
+
+#sidebar strong {
+  color: #093123;
+}
+
+/* OVERLAY */
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 40, 20, 0.45); /* GELAP KEHIJAUAN */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: none;
+  z-index: 1000;
+}
+
+#overlay.show {
+  display: block;
+  opacity: 1;
+}
+
+/* LOGOUT */
+.logout-btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 7px 12px;
+  background: #d94a4a;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  opacity: 0;
+}
+
+.logout-btn:hover {
+  background: #c63838;
+  transform: translateY(-2px);
+}
+

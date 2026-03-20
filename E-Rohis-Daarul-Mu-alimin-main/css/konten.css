@@ -1,0 +1,186 @@
+.konten-section {
+  background: white;
+  padding: 70px 0;
+  font-family: "Poppins", sans-serif;
+  color: #0f3d2e;
+}
+
+.konten-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.konten-image {
+  position: relative;
+  display: inline-block;
+}
+
+.konten-image::before {
+  content: "";
+  position: absolute;
+  inset: -12px; /* lebih sederhana daripada top/left/width/height */
+  background-color: #8dac91;
+  border-radius: 15px;
+  z-index: 0; /* jangan -1, supaya tidak ketutupan background lain */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.konten-image img {
+  position: relative;
+  width: 330px;
+  height: auto;
+  border-radius: 15px;
+  display: block;
+  z-index: 1;
+}
+
+.konten-text {
+  flex: 1;
+}
+
+.konten-text h2 {
+  font-size: 30px;
+  color: #35574a;
+  margin-bottom: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.konten-text p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 14px;
+  text-align: justify;
+}
+.konten-container.reverse {
+  flex-direction: row-reverse;
+}
+
+.judul-konten {
+  font-family: 'Amiri', serif;
+  font-size: 34px;
+  color: #3c4d43;
+  letter-spacing: 1px;
+}
+
+.konten-divider {
+  width: 80%;
+  height: 4px;
+  margin: 60px auto;
+  border: none;
+  background: linear-gradient(to right, transparent, #a8d5ba, transparent);
+  border-radius: 2px;
+}
+
+
+@media (max-width: 900px) {
+  .konten-container {
+    flex-direction: column;
+    padding: 0 25px;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .konten-image img {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .konten-text h2 {
+    text-align: center;
+  }
+
+  .konten-text p {
+    text-align: justify;
+  }
+}
+.youtube-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* jarak logo dan teks */
+  font-size: 28px;
+  color: #0a3022;
+  margin-bottom: 25px;
+}
+
+.youtube-logo {
+  width: 28px;
+  height: 28px;
+  fill: #FF0000; /* warna logo YouTube */
+}
+
+.channel-name {
+  font-weight: 700;
+}
+
+.youtube-section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f5fdf7;
+  border-radius: 18px;
+}
+
+.youtube-title {
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #0a3022;
+}
+
+/* Slider wrapper */
+.youtube-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-wrapper {
+  overflow-x: auto; /* harus auto agar scroll bisa jalan */
+  scroll-behavior: smooth; /* smooth scroll */
+  -webkit-overflow-scrolling: touch;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap; /* jangan wrap */
+}
+.youtube-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #0a3022;
+}
+
+.youtube-link:hover {
+  text-decoration: underline;
+}
+
+/* Video card */
+.video-card {
+  display: inline-block;
+  width: 220px;
+  flex-shrink: 0;
+  text-align: center;
+  text-decoration: none;
+  color: #0a3022;
+}
+
+.video-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.video-card p {
+  margin-top: 8px;
+  font-size: 16px;
+}
